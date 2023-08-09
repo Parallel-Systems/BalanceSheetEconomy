@@ -101,12 +101,12 @@ for month in econ.maturity_schedule:
         if np.max(sub_data) > max_debt:
             max_debt = np.max(sub_data)
 
-fig2, axs = plt.subplots(nrows=N, figsize=(10, 20))
+fig2, axs = plt.subplots(nrows=N, figsize=(20, 20))
 for i, d in enumerate(data):
     axs[i].bar(range(len(d)), d, width=1, color=colors[i], label=str(i))
     axs[i].set(xlim=(0, econ.max_loan_tenor*12-2), xticks=np.arange(1, econ.max_loan_tenor*12-2),
                ylim=(0, max_debt))
-fig2.legend(loc='upper center', ncol=econ.max_loan_tenor*12-2)
+fig2.legend(loc='upper center', ncol=20)
 plt.show()
 
 
